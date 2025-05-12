@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+celery
+beautifulsoup4
+requests
+pika
