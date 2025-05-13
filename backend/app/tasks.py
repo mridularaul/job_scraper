@@ -1,6 +1,6 @@
-# from celery import Celery
+from celery import Celery
 from app.scraper.internshala import scrape_internshala
-from app.scraper.careerjet import scrape_careerjet  # <-- Import CareerJet Scraper
+from app.scraper.careerjet import scrape_careerjet  
 
 # Initialize Celery
 celery = Celery(
@@ -21,6 +21,6 @@ def scrape_internshala_task(self):
 @celery.task(bind=True, max_retries=3, name='scrape_careerjet_task')
 def scrape_careerjet_task(self):
     try:
-        return scrape_careerjet()  # <-- Call the scraper function
+        return scrape_careerjet() 
     except Exception as e:
         raise self.retry(exc=e, countdown=10)
