@@ -1,16 +1,10 @@
 export interface JobListing {
-    id: string;
+  id: string;
     title: string;
     company: string;
     location: string;
-    duration?: string;
-    stipend: string;
-    postedDate: string;
     applyLink: string;
-    source: 'Internshala' | 'LinkedIn' | 'Naukri';
-    description?: string;
-    skills?: string[];
-    experience?: string;
+    source: 'Internshala' | 'CareerJet';
   }
   
   export interface ScrapingStatus {

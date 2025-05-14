@@ -8,7 +8,7 @@ interface JobsTableProps {
 }
 
 const JobsTable: React.FC<JobsTableProps> = ({ jobs, isLoading }) => {
-  const [sortBy, setSortBy] = useState<keyof JobListing>('postedDate');
+  const [sortBy, setSortBy] = useState<keyof JobListing>('title');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
   const [filterSource, setFilterSource] = useState<string>('all');
   
@@ -50,8 +50,7 @@ const JobsTable: React.FC<JobsTableProps> = ({ jobs, isLoading }) => {
   
   const sourceColors = {
     'Internshala': 'bg-blue-100 text-blue-800',
-    'LinkedIn': 'bg-cyan-100 text-cyan-800',
-    'Naukri': 'bg-emerald-100 text-emerald-800',
+    'CareerJet': 'bg-cyan-100 text-cyan-800',
   };
   
   if (isLoading) {
@@ -94,8 +93,7 @@ const JobsTable: React.FC<JobsTableProps> = ({ jobs, isLoading }) => {
           >
             <option value="all">All Sources</option>
             <option value="internshala">Internshala</option>
-            <option value="linkedin">LinkedIn</option>
-            <option value="naukri">Naukri</option>
+            <option value="careerjet">CareerJet</option>
           </select>
         </div>
       </div>
@@ -125,27 +123,27 @@ const JobsTable: React.FC<JobsTableProps> = ({ jobs, isLoading }) => {
               >
                 Location <SortIcon column="location" />
               </th>
-              <th 
+              {/* <th 
                 scope="col" 
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider cursor-pointer"
                 onClick={() => handleSort('duration')}
               >
                 Duration <SortIcon column="duration" />
-              </th>
-              <th 
+              </th> */}
+              {/* <th 
                 scope="col" 
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider cursor-pointer"
                 onClick={() => handleSort('stipend')}
               >
                 Stipend <SortIcon column="stipend" />
-              </th>
-              <th 
+              </th> */}
+              {/* <th 
                 scope="col" 
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider cursor-pointer"
                 onClick={() => handleSort('postedDate')}
               >
                 Posted <SortIcon column="postedDate" />
-              </th>
+              </th> */}
               <th 
                 scope="col" 
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider cursor-pointer"
@@ -179,24 +177,24 @@ const JobsTable: React.FC<JobsTableProps> = ({ jobs, isLoading }) => {
                     {job.location}
                   </div>
                 </td>
-                <td className="px-6 py-4">
+                {/* <td className="px-6 py-4">
                   <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
                     <Clock className="w-4 h-4 mr-1" />
                     {job.duration || 'Not specified'}
                   </div>
-                </td>
-                <td className="px-6 py-4">
+                </td> */}
+                {/* <td className="px-6 py-4">
                   <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
                     <Wallet className="w-4 h-4 mr-1" />
                     {job.stipend}
                   </div>
-                </td>
-                <td className="px-6 py-4">
+                </td> */}
+                {/* <td className="px-6 py-4">
                   <div className="text-sm text-gray-500 dark:text-gray-400 flex items-center">
                     <Calendar className="w-4 h-4 mr-1" />
                     {new Date(job.postedDate).toLocaleDateString()}
                   </div>
-                </td>
+                </td> */}
                 <td className="px-6 py-4">
                   <span className={`px-2 py-1 text-xs rounded-full ${
                     sourceColors[job.source as keyof typeof sourceColors]

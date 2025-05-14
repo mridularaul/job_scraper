@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import JobsTable from './JobsTable.tsx';
 import ScrapingControls from './ScrapingControls';
 import { JobListing, ScrapingStatus } from '../types/index.ts';
-// import { fetchJobs, triggerScraping } from '../api/jobsApi.ts';
+import { fetchJobs } from '../api/jobsApi.ts';
 
 // Mock data for development - replace with actual API calls in production
 import { mockJobs } from '../mockData.ts';
@@ -19,10 +19,9 @@ const Dashboard: React.FC = () => {
   const loadJobs = async () => {
     setIsLoadingJobs(true);
     try {
-      // In development, use mock data to avoid API dependency
-      // In production, uncomment the following line to fetch real data
-      // const jobsData = await fetchJobs();
-      const jobsData = mockJobs;
+      
+      const jobsData = await fetchJobs();
+
       setJobs(jobsData);
     } catch (error) {
       console.error('Failed to load jobs', error);
