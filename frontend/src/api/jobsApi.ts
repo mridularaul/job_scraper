@@ -2,7 +2,7 @@
 import type { JobListing } from "../types/index"
 
 // Base URL should be updated to your actual API endpoint
-const API_BASE_URL = "http://10.10.123.47:8000"
+const API_BASE_URL = "http://localhost:8000"
 
 export const fetchJobs = async (): Promise<JobListing[]> => {
   try {
