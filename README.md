@@ -11,11 +11,6 @@ A containerized distributed job scraping system using **React**, **FastAPI**, **
 * Automatic retry (up to 3 times) for failed tasks
 * Fully Dockerized
 
-## Architecture
-
-<img width="776" height="545" alt="image" src="https://github.com/user-attachments/assets/b7568fa4-b653-4ee6-8c3d-6ed000b06508" />
-
-
 ## Tech Stack
 
 * Frontend: React
@@ -33,9 +28,9 @@ docker-compose up --build --scale celery_worker=3
 
 ## Screenshots
 
-![WhatsApp Image 2025-05-13 at 4 13 12 PM](https://github.com/user-attachments/assets/cd079484-831e-48ff-b4fc-8ef753c4b57a)
+<img width="1895" height="859" alt="Frontend" src="https://github.com/user-attachments/assets/f399f02d-d3ce-4f17-adb2-74b9217eec21" />
 
+<img width="1889" height="854" alt="Frontend" src="https://github.com/user-attachments/assets/8c897020-0204-4aa1-9986-2ee66cebf710" />
 
-![WhatsApp Image 2025-05-13 at 8 29 45 PM](https://github.com/user-attachments/assets/f5100f36-ae8c-4863-81ef-1bc9e4111e67)
-
+<img width="1915" height="1016" alt="Docker" src="https://github.com/user-attachments/assets/561717ac-d280-4450-9422-f59e1a093bee" />
 
